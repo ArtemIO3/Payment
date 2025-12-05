@@ -50,8 +50,24 @@ public:
 	}
 	void Accruals()
 	{
-
+		int accruals = salary * (NOWDIM / NODWIM);
+		cout << accruals<<"\n";
 	}
+	void Retention()
+	{
+		int  retentiom = campingTax * 0.1;
+		int fieldtax = (campingTax - retentiom) * 0.13;
+		cout << retentiom;
+		cout << endl;
+		cout << "\nfieldtax\n" << fieldtax;
+		cout << endl;
+        int all = retentiom + fieldtax;
+		cout << "\nall\n" << all;
+		cout << endl;
+		int forIssuance = campingTax - all;
+		cout <<"\nforIssuance" << forIssuance;
+	}
+
 	void Print()
 	{
 		cout << "Surname: " << surname << "\nName: " << name << "\nPatronymic:" << patronymic << "\nSalary: " << salary << "\nYear of Empoyment:" << yearofEmpoyment <<
@@ -61,5 +77,18 @@ public:
 
 int main()
 {
+Payment obj("Ivanov", "Ivan", "Ivanovich",30000,     2015,    15.0,     25000.0,    20,
+		22,
+		6);
+cout << " Print\n";
+obj.Print();
 
+cout << "Work experience\n";
+obj.WorkExperience();
+
+cout << "\n Accruals \n";
+obj.Accruals();
+
+cout << "\n Retention\n";
+obj.Retention();
 }
